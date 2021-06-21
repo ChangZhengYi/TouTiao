@@ -76,7 +76,7 @@ export default {
     data() {
         return {
             user: {
-                mobile: "13711111111", //手机号
+                mobile: "13911111111", //手机号
                 code: "246810", //验证码
             },
             formrules: {
@@ -114,6 +114,9 @@ export default {
                 const { data } = await login(this.user);
                 Toast.success("登录成功");
                 this.$store.commit("setUser", data.data);
+
+                //登录成功跳转回原来界面
+                this.$router.back();
             } catch (err) {
                 console.log(err);
                 Toast.fail("登录失败，手机号或验证码错误");
