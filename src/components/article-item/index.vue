@@ -14,11 +14,8 @@
                 </div>
             </div>
             <div class="label-warp">
-                <span>{{ article.aut_name }}</span>
-                <span
-                    >{{ article.comm_count }}
-                    评论
-                </span>
+                <span>{{ article.aut_name }}</span
+                >&nbsp; <span>{{ article.comm_count }}评论 </span>&nbsp;
                 <span>{{ article.pubdate | relativeTime }} </span>
             </div>
         </div>

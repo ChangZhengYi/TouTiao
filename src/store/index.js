@@ -10,7 +10,7 @@ export default new Vuex.Store({
         // user: JSON.parse(window.localStorage.getItem("user")),
         user: getItem(user_key),
     },
-    mutations: {
+    mutations: { 
         setUser(state, data) {
             state.user = data;
             setItem(user_key, state.user);
