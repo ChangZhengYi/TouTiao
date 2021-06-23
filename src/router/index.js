@@ -3,6 +3,10 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
+// const SearchSuggestion = () =>
+//     import(/* webpackChunkName: "Order_Report" */ "../views/search/components/search-suggestion.vue");
+const Search = () =>
+    import(/* webpackChunkName: "Order_Report" */ "../views/search/index.vue");
 const login = () =>
     import(/* webpackChunkName: "Order_Report" */ "../views/login/index.vue");
 const layout = () =>
@@ -46,6 +50,10 @@ const router = new VueRouter({
                     component: my,
                 },
             ],
+        },
+        {
+            path: "/search",
+            component: Search,
         },
     ],
 });
