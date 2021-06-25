@@ -2,6 +2,10 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
+const UserProfile = () =>
+    import(
+        /* webpackChunkName: "Order_Report" */ "../views/user-profile/index.vue"
+    );
 const ArticleIndex = () =>
     import(/* webpackChunkName: "Order_Report" */ "../views/article/index.vue");
 const Search = () =>
@@ -59,6 +63,10 @@ const router = new VueRouter({
             name: "article",
             component: ArticleIndex,
             props: true,
+        },
+        {
+            path: "/user/profile",
+            component: UserProfile,
         },
     ],
 });

@@ -58,3 +58,24 @@ export const deleteFollow = (userId) => {
         // },
     });
 };
+export const getUserProfile = () => {
+    return request({
+        method: "get",
+        url: "/app/v1_0/user/profile",
+    });
+};
+
+export const updateUserProfile = (data) => {
+    return request({
+        method: "PATCH",
+        url: "/app/v1_0/user/profile",
+        data,
+    });
+};
+export const updateUserPhoto = (data) => {
+    return request({
+        method: "PATCH",
+        url: "/app/v1_0/user/photo",
+        data,
+    });
+};
