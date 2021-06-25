@@ -2,9 +2,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
-
-// const SearchSuggestion = () =>
-//     import(/* webpackChunkName: "Order_Report" */ "../views/search/components/search-suggestion.vue");
+const ArticleIndex = () =>
+    import(/* webpackChunkName: "Order_Report" */ "../views/article/index.vue");
 const Search = () =>
     import(/* webpackChunkName: "Order_Report" */ "../views/search/index.vue");
 const login = () =>
@@ -54,6 +53,12 @@ const router = new VueRouter({
         {
             path: "/search",
             component: Search,
+        },
+        {
+            path: "/article/:articleId",
+            name: "article",
+            component: ArticleIndex,
+            props: true,
         },
     ],
 });

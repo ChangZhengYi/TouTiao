@@ -53,7 +53,7 @@ export default {
                 timestamp: this.timestamp || Date.now(),
                 with_top: 1,
             });
-            console.log(data);
+            // console.log(data);
             const { results } = data.data;
             this.articles.push(...results);
             this.loading = false;
