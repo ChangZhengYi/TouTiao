@@ -2,6 +2,11 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
+
+const UserChat = () =>
+    import(
+        /* webpackChunkName: "Order_Report" */ "../views/user-chat/index.vue"
+    );
 const UserProfile = () =>
     import(
         /* webpackChunkName: "Order_Report" */ "../views/user-profile/index.vue"
@@ -67,6 +72,10 @@ const router = new VueRouter({
         {
             path: "/user/profile",
             component: UserProfile,
+        },
+        {
+            path: "/user/chat",
+            component: UserChat,
         },
     ],
 });
