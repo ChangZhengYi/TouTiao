@@ -71,6 +71,7 @@ import { login, sendSms } from "@/api/user";
 import { Toast } from "vant";
 
 export default {
+    name: "login",
     created() {},
     props: {},
     data() {
@@ -117,9 +118,10 @@ export default {
                 this.$store.commit("removeCachePage", "layout");
                 //登录成功跳转回原来界面
                 this.$router.back();
+                // this.$router.push(this.$router.query.redirect || "/");
             } catch (err) {
                 console.log(err);
-                Toast.fail("登录失败，手机号或验证码错误");
+                // Toast.fail("登录失败，手机号或验证码错误");
             }
         },
         onfailed(error) {
