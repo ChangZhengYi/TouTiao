@@ -1,7 +1,10 @@
 <template>
     <div class="layout-container">
         <!-- 子路由出口 -->
-        <router-view></router-view>
+
+        <keep-alive>
+            <router-view></router-view>
+        </keep-alive>
         <!-- /子路由出口 -->
         <!-- 底部导航栏 -->
         <van-tabbar v-model="active" router>
@@ -16,6 +19,7 @@
 
 <script>
 export default {
+    name: "layout",
     created() {},
     props: {},
     data() {
@@ -25,6 +29,9 @@ export default {
     },
     methods: {},
     components: {},
+    mounted() {
+        this.$store.commit("addCachePage", "layout");
+    },
 };
 </script>
 

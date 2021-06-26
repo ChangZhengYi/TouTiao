@@ -114,7 +114,7 @@ export default {
                 const { data } = await login(this.user);
                 Toast.success("登录成功");
                 this.$store.commit("setUser", data.data);
-
+                this.$store.commit("removeCachePage", "layout");
                 //登录成功跳转回原来界面
                 this.$router.back();
             } catch (err) {
